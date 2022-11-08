@@ -18,8 +18,9 @@ def translate_it(otext, btran, ocombo, tcombo):
 
 
         words = textblob.TextBlob(otext.get(1.0, END))
-        words = words.translate(from_lang = from_language_key, to = to_language_key)
-        btran.insert(1.0, words)
+        words_corr = words.correct()
+        words_corr = words_corr.translate(from_lang = from_language_key, to = to_language_key)
+        btran.insert(1.0, words_corr)
 
     except Exception as e:
         messagebox.showerror("Translator", e)
