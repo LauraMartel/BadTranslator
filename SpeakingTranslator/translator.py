@@ -1,7 +1,7 @@
 from libraries import *
 from translator_emoji import transform_word_to_emoji
 from translator_translate import *
-from translator_speech import *
+
 
 root = Tk()
 root.title("Bad Translator")
