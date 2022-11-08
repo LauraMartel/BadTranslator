@@ -7,7 +7,3 @@ import random
 from random import choice 
 from PIL import Image, ImageDraw
 import io
-
-
-root = Tk()
-root.title("Bad Translator")
