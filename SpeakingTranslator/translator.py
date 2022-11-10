@@ -3,7 +3,7 @@ from translator_translate import *
 from translator_speech import *
 
 root = Tk()
-root.title("Bad Translator")
+root.title("Speak to Me Translator")
 
 
 ##### Main Frame
