@@ -1,7 +1,3 @@
-import speech_recognition as sr
-import pyttsx3
-
-
 def speak_to_text():
     listener = sr.Recognizer()
     try:
@@ -14,7 +10,7 @@ def speak_to_text():
         pass
     return listen
 
- 
+
 
 def text_to_speak(text, tcombo):
     engine = pyttsx3.init()
