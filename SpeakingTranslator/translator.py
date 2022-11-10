@@ -1,5 +1,4 @@
 from libraries import *
-from translator_emoji import transform_word_to_emoji
 from translator_translate import *
 from translator_speech import *
 
@@ -23,10 +22,10 @@ bad_translated = Text(translate_frame2,
                         height=10, width=60,
                         background="black", foreground="#1FC742", font= "Comic")
 original_combo = ttk.Combobox(translate_frame1, width=20,
-                            values=list(languages().values()), font="Comic", 
+                            values=list(languages().values()), font="Comic",
                             justify="center")
 translated_combo = ttk.Combobox(translate_frame2, width=20,
-                                values=list(languages().values()), 
+                                values=list(languages().values()),
                                 font= "Comic", justify="center")
 original_combo.current(0) # current sets the language you want to be displayed
 translated_combo.current(1)
@@ -40,7 +39,7 @@ translated_combo.grid(row=3, column=0, padx=5, pady=5, sticky=W+S)
 
 ##### Buttons
 
-translate_button = Button(translate_frame2, text="Translate!", font=("Comic", 5), 
+translate_button = Button(translate_frame2, text="Translate!", font=("Comic", 5),
         command=lambda:[translate_it(original_text, bad_translated, original_combo, translated_combo),
         text_to_speak(bad_translated.get("1.0",END), translated_combo)] , border=2, borderwidth=5)
 translate_button.configure(font="Comic 12", foreground="white", bg = "#4E4F50", highlightbackground="black")
@@ -48,10 +47,10 @@ translate_button.grid(row=0, column=1,padx=2, sticky=S)
 
 
 def clear_translate():
-    original_text.delete(1.0, END), 
+    original_text.delete(1.0, END),
     bad_translated.delete(1.0, END)
 
-clear_button = Button(translate_frame2, text="Clear", font=("Comic", 5), 
+clear_button = Button(translate_frame2, text="Clear", font=("Comic", 5),
         command=clear_translate, border=2, borderwidth=5)
 clear_button.configure(font="Comic 12", foreground="white", bg = "#4E4F50", highlightbackground="black")
 clear_button.grid(row=3, column=1, sticky=S)
